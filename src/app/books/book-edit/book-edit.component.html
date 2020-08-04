@@ -1,0 +1,14 @@
+<form class="container" [formGroup]="editBookForm" (ngSubmit)="update()">
+  <div class="form-group">
+    <input type="hidden" class="form-control" formControlName="id" placeholder="Enter name"><br>
+    <label>Title</label>
+    <input style="width: 500px" type="text" class="form-control" formControlName="title" placeholder="Enter name"><br>
+    <label>Author</label>
+    <input style="width: 500px" type="text" class="form-control" formControlName="author" placeholder="Enter name"><br>
+    <label>Descript</label>
+    <textarea style="width: 500px;height: 200px" type="text" class="form-control" formControlName="description" placeholder="Enter name"></textarea><br>
+  </div>
+  <button style="margin-right: 20px" type="submit" class="btn btn-primary">Submit</button>
+  <button class="btn btn-primary" routerLink="/">Quay lại</button>
+</form>
+<br>

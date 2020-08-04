@@ -1,0 +1,30 @@
+
+<hr>
+<form class="container" [formGroup]="bookForm" (ngSubmit)="add()">
+  <div class="form-group">
+    <label class="font-weight-bold">Tiêu đề: </label>
+    <input style="width: 500px" formControlName="title" class="form-control">
+    <div *ngIf="bookForm.get('title').invalid" style="color: red;">
+      Tiêu đề không được để trống  !
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="font-weight-bold">Tác giả: </label>
+    <input style="width: 500px" formControlName="author" class="form-control">
+    <div *ngIf="bookForm.get('author').invalid" style="color: red;">Tác giả không được để trống !</div>
+  </div>
+
+  <div class="form-group">
+    <label class="font-weight-bold">Nội dung: </label>
+    <textarea style="width: 500px;height: 200px" formControlName="description" class="form-control"></textarea>
+    <div *ngIf="bookForm.get('description').invalid" style="color: red;">Nội dung không được để trống !</div>
+  </div>
+
+  <br>
+
+  <div class="form-group">
+    <button style="margin-right: 20px"  class="btn btn-primary" type="submit">Tạo mới</button>
+    <button class="btn btn-primary" routerLink="/">Quay lại</button>
+  </div>
+</form>

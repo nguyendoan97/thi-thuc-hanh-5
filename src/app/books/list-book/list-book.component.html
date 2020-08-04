@@ -1,0 +1,30 @@
+
+<div class="card">
+  <br>
+  <button style="width: 100px ; margin-left: 20px" class="btn btn-primary" routerLink="create">Tạo mới</button>
+  <div class="card-body">
+    <table id="customers">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Tên Sách</th>
+        <th>Tác Giả</th>
+        <th>Tùy Chọn</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let book of books">
+        <td>{{book.id}}</td>
+        <td><a [routerLink]="[book.id, 'book']">{{ book.title }}</a></td>
+        <td>{{ book.author }}</td>
+        <td>
+          <button style="margin-right: 30px" class="btn btn-primary" [routerLink]="[book.id, 'edit']" >Sửa</button>
+          <button class="btn btn-danger" (click)="delete(book.id)">Xóa</button>
+        </td>
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>
+
